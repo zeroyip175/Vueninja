@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>My Vuejs-Tut</title>
-    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <script src="https://unpkg.com/vue@3.3.8"></script>
     
 </head>
 <body>
     <div id="gameapp">
         <h1>{{title}}</h1>
-        <p v-for="ninjadata in ninjadatas">{{ninjadata.name}}</p>
+        <p v-for="ninjadata in ninjadatas">{{ninjadata.name}}</p> <!-- v-for a in b {{a.b array level}} = for looop -->
         <p v-for="ninjadata in ninjadatas">{{ninjadata.health}}</p>
         <p v-for="ninjadata in ninjadatas">{{ninjadata.level}}</p>
 
+        <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
+        <p>{{ninjaelement}}</p>
     </div>
     
-    <script src="js/tut.js"></script>
+    <script src="js/tut.js"></script> 
    
 </body>
 </html>
