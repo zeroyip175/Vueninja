@@ -3,6 +3,11 @@ var ninja = Vue.createApp ({
         return{
             title: 'Welcome to ninja world',
             ninjaelement: "Ability: Fire ball jutsu ☄️",
+            ninjamember: 
+                {
+                    email: 'jordanyip@gmail.com',
+                    password: 'ysw1217'
+                },
             ninjadatas: [
                 {name: "Name: John Smith"},
                 {health: "Health: 100/100"},

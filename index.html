@@ -14,7 +14,16 @@
         <p v-for="ninjadata in ninjadatas">{{ninjadata.level}}</p>
 
         <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
-        <p>{{ninjaelement}}</p>
+        <br>
+        <h3>
+            Form to enter the ninja member
+        </h3>
+        <form action="">
+            <input type="email" required v-model="email"><br><br>
+            <input type="password" required v-model="password">
+        </form>
+        <p>Email: {{ninjamember.email}}</p>
+        <p>Password: {{ninjamember.password}}</p>
     </div>
     
     <script src="js/tut.js"></script> 
