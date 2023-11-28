@@ -18,6 +18,8 @@
             {{ninjadata.level}}
         </li>
         <br>
+        <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
+        <br><br>
 
         <table>
         <tr>
@@ -33,8 +35,7 @@
             <td>{{ninjadata.level}}</td>
         </tr>
         </table>
-        <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
-        <br>
+        
     </div>
     <script src="js/tut.js"></script>
 </body>
