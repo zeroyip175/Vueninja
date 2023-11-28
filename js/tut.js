@@ -3,15 +3,19 @@ var ninja = Vue.createApp ({
         return{
             title: 'Welcome to ninja world',
             ninjaelement: "Ability: Fire ball jutsu ☄️",
-            ninjamember: 
-                {
-                    email: 'jordanyip@gmail.com',
-                    password: 'ysw1217'
-                },
+            tabletitle:[{member:"Ninjas Members", health:"Health", level:"Level"}],
             ninjadatas: [
-                {name: "Name: John Smith"},
-                {health: "Health: 100/100"},
-                {level: "lv: 20"}
+                {name:"John Smith", health: "30/100", level:10},
+                {name:"Naruto Uzumaki", health:"40/100", level:1},
+                {name:"Sasuke Uchiha", health: "100/100", level:80},
+                {name:"Shikamaru Nara",health:"98/100",level:76},
+                {name:"Hinata Hyuga",health:"98/100",level:73},
+                {name:"Jiraiya",health:"98/100",level:72},
+                {name:"Gaara",health:"98/100",level:71},
+                {name:"Rock Lee",health:"98/100",level:75},
+                {name:"Itachi Uchiha",health:"98/100",level:100}
+
+                
             
             ]
         }

@@ -5,28 +5,49 @@
     <title>My Vuejs-Tut</title>
     <script src="https://unpkg.com/vue@3.3.8"></script>
     
+    
 </head>
 <body>
     <div id="gameapp">
         <h1>{{title}}</h1>
-        <p v-for="ninjadata in ninjadatas">{{ninjadata.name}}</p> <!-- v-for a in b {{a.b array level}} = for looop -->
-        <p v-for="ninjadata in ninjadatas">{{ninjadata.health}}</p>
-        <p v-for="ninjadata in ninjadatas">{{ninjadata.level}}</p>
+<!-- v-for a in b {{a.b array level}} = for looop -->
+        <h3>Name</h3>
+        <li v-for="ninjadata in ninjadatas">
+            {{ninjadata.name}}
+            {{ninjadata.health}}
+            {{ninjadata.level}}
+        </li>
+        <br>
+        <table>
+        <tr>
+            <th v-for="ninjadata in ninjadatas" style="text-align: center; margin: auto; "></th>
+        </tr>
+        <tr v-for="ninjadata in ninjadatas">
+            <td >
+                {{ninjadata.name}}
+            </td>
+        </tr>
 
+        </table>
         <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
         <br>
-        <h3>
-            Form to enter the ninja member
-        </h3>
-        <form action="">
-            <input type="email" required v-model="email"><br><br>
-            <input type="password" required v-model="password">
-        </form>
-        <p>Email: {{ninjamember.email}}</p>
-        <p>Password: {{ninjamember.password}}</p>
+        
     </div>
     
     <script src="js/tut.js"></script> 
-   
+    <script src="css/index.css"></script>
 </body>
+
 </html>
+
+
+<!--<th style="text-align: center; margin: auto; ">Ninjas Health</th>
+<th style="text-align: center; margin: auto; ">Ninjas Level</th>
+
+<tr>
+            <th style="text-align: center; margin: auto; ">Ninjas Members</th>
+            <tr>
+                <td  v-for="ninjadata in ninjadatas" style="text-align: center;">
+                   v
+                </td>
+         </tr>
