@@ -3,7 +3,9 @@ var ninja = Vue.createApp ({
         return{
             title: 'Welcome to ninja world',
             ninjaelement: "Ability: Fire ball jutsu ☄️",
-            tabletitle:[{member:"Ninjas Members", health:"Health", level:"Level"}],
+            tabletitles:[
+                {members:"Ninjas Members", health:"Health", level:"Level"}
+            ],
             ninjadatas: [
                 {name:"John Smith", health: "30/100", level:10},
                 {name:"Naruto Uzumaki", health:"40/100", level:1},

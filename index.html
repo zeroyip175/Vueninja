@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>My Vuejs-Tut</title>
     <script src="https://unpkg.com/vue@3.3.8"></script>
-    
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     
 </head>
 <body>
@@ -18,36 +18,24 @@
             {{ninjadata.level}}
         </li>
         <br>
+
         <table>
         <tr>
-            <th v-for="ninjadata in ninjadatas" style="text-align: center; margin: auto; "></th>
+            <thead  v-for="tabletitle in tabletitles" style="text-align: center; margin: auto;">
+            <th>{{tabletitle.members}}</th>
+            <th>{{tabletitle.health}}</th>
+            <th>{{tabletitle.level}}</th>
+            </thead>
         </tr>
         <tr v-for="ninjadata in ninjadatas">
-            <td >
-                {{ninjadata.name}}
-            </td>
+            <td>{{ninjadata.name}}</td>
+            <td>{{ninjadata.health}}</td>
+            <td>{{ninjadata.level}}</td>
         </tr>
-
         </table>
         <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
         <br>
-        
     </div>
-    
-    <script src="js/tut.js"></script> 
-    <script src="css/index.css"></script>
+    <script src="js/tut.js"></script>
 </body>
-
 </html>
-
-
-<!--<th style="text-align: center; margin: auto; ">Ninjas Health</th>
-<th style="text-align: center; margin: auto; ">Ninjas Level</th>
-
-<tr>
-            <th style="text-align: center; margin: auto; ">Ninjas Members</th>
-            <tr>
-                <td  v-for="ninjadata in ninjadatas" style="text-align: center;">
-                   v
-                </td>
-         </tr>
