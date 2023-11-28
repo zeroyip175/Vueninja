@@ -16,12 +16,17 @@ var ninja = Vue.createApp ({
                 {name:"Gaara",health:"98/100",level:71},
                 {name:"Rock Lee",health:"98/100",level:75},
                 {name:"Itachi Uchiha",health:"98/100",level:100}
-
-                
-            
-            ]
+            ],
+            newninjastudent : " "
         }
-    }
+    },
+    methods: {
+        addNewNinjaStudent: function(){
+            if (this.newninjastudent.length > 0) {
+                this.ninjadatas.name.push({ninjadatas.name: })
+            }
+        }
+    },
 })
 
 ninja.mount('#gameapp')
