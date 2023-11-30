@@ -35,17 +35,19 @@
             <td>{{ninjadata.level}}</td>
         </tr>
         </table>
-
+        <br>
         <input id="NinjaStudentInput" v-model="newninjastudent"
         v-on:keypress.enter="addNinjaStudent"/>
         <button v-on:click="addNinjaStudent"> Add Ninja Student</button>
         <p>
             <ul>
-                <li v-for="ninjadata in ninjadatas">
+                <li v-for="(ninjadata, index) in ninjadatas">
                     {{ninjadata.name}}
+                    <button v-on:click="deleteNinjaStudent(index)">X</button>
                 </li>
             </ul>
         </p>
+
         
     </div>
     <script src="js/tut.js"></script>

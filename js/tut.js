@@ -26,6 +26,10 @@ var ninja = Vue.createApp ({
                 this.ninjadatas.push({name: this.newninjastudent,health: "0/100",level:0});
                 this.newninjastudent = '';
             }
+        },
+
+        deleteNinjaStudent(index){
+            this.ninjadatas.splice(index,1);
         }
     },
 })
