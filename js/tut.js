@@ -17,13 +17,14 @@ var ninja = Vue.createApp ({
                 {name:"Rock Lee",health:"98/100",level:75},
                 {name:"Itachi Uchiha",health:"98/100",level:100}
             ],
-            newninjastudent : " "
+            newninjastudent : " ",
         }
     },
     methods: {
-        addNewNinjaStudent: function(){
+       addNinjaStudent(){
             if (this.newninjastudent.length > 0) {
-                this.ninjadatas.name.push({ninjadatas.name: })
+                this.ninjadatas.push({name: this.newninjastudent,health: "0/100",level:0});
+                this.newninjastudent = '';
             }
         }
     },

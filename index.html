@@ -35,6 +35,17 @@
             <td>{{ninjadata.level}}</td>
         </tr>
         </table>
+
+        <input id="NinjaStudentInput" v-model="newninjastudent"
+        v-on:keypress.enter="addNinjaStudent"/>
+        <button v-on:click="addNinjaStudent"> Add Ninja Student</button>
+        <p>
+            <ul>
+                <li v-for="ninjadata in ninjadatas">
+                    {{ninjadata.name}}
+                </li>
+            </ul>
+        </p>
         
     </div>
     <script src="js/tut.js"></script>
