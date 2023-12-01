@@ -13,10 +13,12 @@
 <!-- v-for a in b {{a.b array level}} = for looop -->
         <h3>Name</h3>
         <li v-for="ninjadata in ninjadatas">
-            {{ninjadata.name}}
+            {{capitalizedfirstletter (ninjadata.name)}}
             {{ninjadata.health}}
             {{ninjadata.level}}
         </li>
+        
+        <p>{{title | capitalizedfirstletter}}</p>
         <br>
         <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
         <br><br>
@@ -42,7 +44,7 @@
         <p>
             <ul>
                 <li v-for="(ninjadata, index) in ninjadatas">
-                    {{ninjadata.name}}
+                    {{ninjadata.name }}
                     <button v-on:click="deleteNinjaStudent(index)">X</button>
                 </li>
             </ul>
