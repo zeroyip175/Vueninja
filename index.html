@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>My Vuejs-Tut</title>
-    <script src="https://unpkg.com/vue@3.3.8"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    
+    <style>
+        .origalclass{
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
     <div id="gameapp">
@@ -14,7 +18,7 @@
 <!-- v-for a in b {{a.b array level}} = for looop -->
         <h3>Name</h3>
         <li v-for="ninjadata in ninjadatas">
-            {{capitalizedfirstletter (ninjadata.name)}}
+            {{capitalizedfirstletter(ninjadata.name)}}
             {{ninjadata.health}}
             {{ninjadata.level}}
         </li>
@@ -45,7 +49,7 @@
         <p>
             <ul>
                 <li v-for="(ninjadata, index) in ninjadatas">
-                    {{ninjadata.name }}
+                    {{ninjadata.name}}
                     <button v-on:click="deleteNinjaStudent(index)">X</button>
                 </li>
             </ul>
@@ -55,13 +59,29 @@
             <ul>
                 <li v-for="ninjadata in sortedNinjaStudents">
                     {{ninjadata.name}}, {{ninjadata.dob}},{{ageFromDOB(ninjadata.dob)}}
-                    
                 </li>
             </ul>
         </p>
+        <p>
+            <input type="checkbox" v-model="ninjaClassActive">changeclass
+        </p>
+        <div v-bind:class="{'origalclass': ninjaClassActive}">origal Ninja</div>
+        <hr>
+        <p>
+            <input type="text" v-model="ninjaStyleObject.color">Color
+        </p>
+        <p>
+            <input type="text" v-model="ninjaStyleObject.fontSize">Size
+        </p>
+        <div v-bind:style="ninjaStyleObject">Changable Ninja</div>
+        </div>
 
-        
+
     </div>
+    
     <script src="js/tut.js"></script>
+    
+    
+    
 </body>
 </html>

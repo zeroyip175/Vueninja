@@ -18,6 +18,11 @@ var ninja = Vue.createApp ({
                 {name:"itachi Uchiha",health:"98/100",level:100, dob:"1997-10-18"}
             ],
             newninjastudent : " ",
+            ninjaClassActive: true,
+            ninjaStyleObject:{
+                color: 'red',
+                fontSize: '50px'
+            }
 
         }
     },
@@ -33,14 +38,13 @@ var ninja = Vue.createApp ({
                 this.newninjastudent = '';
             }
         },
-
-        deleteNinjaStudent(index){
-            this.ninjadatas.splice(index,1);
-        },
-        capitalizedfirstletter(value){
+        capitalizedfirstletter:function(value){
             if (!value) return '';
             value = value.toString();
             return value.charAt(0).toUpperCase() + value.slice(1);
+        },
+        deleteNinjaStudent(index){
+            this.ninjadatas.splice(index,1);
         },
         ageFromDOB: function(dob){
             return moment().diff(dob,"years");
