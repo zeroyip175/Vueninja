@@ -5,6 +5,7 @@
     <title>My Vuejs-Tut</title>
     <script src="https://unpkg.com/vue@3.3.8"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     
 </head>
 <body>
@@ -17,8 +18,6 @@
             {{ninjadata.health}}
             {{ninjadata.level}}
         </li>
-        
-        <p>{{title | capitalizedfirstletter}}</p>
         <br>
         <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
         <br><br>
@@ -29,12 +28,14 @@
             <th>{{tabletitle.members}}</th>
             <th>{{tabletitle.health}}</th>
             <th>{{tabletitle.level}}</th>
+            <th>{{tabletitle.dob}}</th>
             </thead>
         </tr>
         <tr v-for="ninjadata in ninjadatas">
             <td>{{ninjadata.name}}</td>
             <td>{{ninjadata.health}}</td>
             <td>{{ninjadata.level}}</td>
+            <td>{{ninjadata.dob}}</td>
         </tr>
         </table>
         <br>
@@ -46,6 +47,15 @@
                 <li v-for="(ninjadata, index) in ninjadatas">
                     {{ninjadata.name }}
                     <button v-on:click="deleteNinjaStudent(index)">X</button>
+                </li>
+            </ul>
+        </p>
+        <br>
+        <p>
+            <ul>
+                <li v-for="ninjadata in sortedNinjaStudents">
+                    {{ninjadata.name}}, {{ninjadata.dob}},{{ageFromDOB(ninjadata.dob)}}
+                    
                 </li>
             </ul>
         </p>
