@@ -20,7 +20,7 @@ var ninja = Vue.createApp ({
             newninjastudent : " ",
             ninjaClassActive: true,
             ninjaStyleObject:{
-                color: 'red',
+                color: 'grey',
                 fontSize: '50px'
             }
 
