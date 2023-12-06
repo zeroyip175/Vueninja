@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>My Vuejs-Tut</title>
     <script src="https://unpkg.com/vue@next"></script>
+    
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <style>
@@ -11,11 +12,13 @@
             background-color: yellow;
         }
     </style>
+    
 </head>
 <body>
     <div id="gameapp">
         <h1>{{title}}</h1>
 <!-- v-for a in b {{a.b array level}} = for looop -->
+        <h3>Lesson: Data binding</h3>
         <h3>Name</h3>
         <li v-for="ninjadata in ninjadatas">
             {{capitalizedfirstletter(ninjadata.name)}}
@@ -23,6 +26,8 @@
             {{ninjadata.level}}
         </li>
         <br>
+        <hr>
+        <h3>Lesson: Two-way binding</h3>
         <input type="text" v-model="ninjaelement"> <!--vmodel 能將JS內的值繫結到html內-->
         <br><br>
 
@@ -43,6 +48,8 @@
         </tr>
         </table>
         <br>
+        <hr>
+        <h3>Lesson: Button, event and methods</h3>
         <input id="NinjaStudentInput" v-model="newninjastudent"
         v-on:keypress.enter="addNinjaStudent"/>
         <button v-on:click="addNinjaStudent"> Add Ninja Student</button>
@@ -62,11 +69,14 @@
                 </li>
             </ul>
         </p>
+        <hr>
+        <h3>Lesson: CSS class binding</h3>
         <p>
             <input type="checkbox" v-model="ninjaClassActive">changeclass
         </p>
         <div v-bind:class="{'origalclass': ninjaClassActive}">origal Ninja</div>
         <hr>
+       
         <p>
             <input type="text" v-model="ninjaStyleObject.color">Color
         </p>
@@ -74,12 +84,29 @@
             <input type="text" v-model="ninjaStyleObject.fontSize">Size
         </p>
         <div v-bind:style="ninjaStyleObject">Changable Ninja</div>
-        </div>
+        <hr>
+        <h3>Lesson: v-if</h3>
+        <p> <input type="text" v-model="userInput" placeholder="A/B/C">
 
-
+        <div v-if="userInput === 'A'">A</div>
+        <div v-else-if="userInput === 'B'">B</div>
+        <div v-else-if="userInput === 'C'">C</div>
+        <div v-else>Not A/B/C </div>
+        <hr>
+        <h3>Lesson: EventHandler</h3>
+        <button v-on:click="bobButtonClick1">Add1</button>
+        <p>The button above has been clicked {{conterobject.conter1}} times</p>
+        <br>
+        <button  v-on:click="bobButtonClick2">Submit button</button>
+        <p>The button above has been clicked {{conterobject.conter2}} times</p>
+        <br>
+        <a href="#" v-on:click.stop.prevent="bobButtonClick3">Add1</a>
+        <p>The button above has been clicked {{conterobject.conter3}} times</p>
+        <br>
+        <input v-on:keyup.enter="bobButtonClick4" placeholder="Press enter" >
+        <p>The button above has been entered {{conterobject.conter4}} times</p>
     </div>
-    
-    <script src="js/tut.js"></script>
-    
+        
+        <script src="js/tut.js"></script>
 </body>
 </html>

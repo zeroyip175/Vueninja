@@ -2,6 +2,7 @@ var ninja = Vue.createApp ({
     data(){
         return{
             title: 'Welcome to ninja world',
+            userInput: 'A',
             ninjaelement: "Ability: Fire ball jutsu ☄️",
             tabletitles:[
                 {members:"Ninjas Members", health:"Health", level:"Level", dob: "Date of Birth"}
@@ -22,8 +23,14 @@ var ninja = Vue.createApp ({
             ninjaStyleObject:{
                 color: 'grey',
                 fontSize: '50px'
+            },
+            conterobject:{
+                conter1: 0,
+                conter2: 0,
+                conter3: 0,
+                conter4: 0
             }
-
+            
         }
     },
     computed:{
@@ -47,8 +54,21 @@ var ninja = Vue.createApp ({
             this.ninjadatas.splice(index,1);
         },
         ageFromDOB: function(dob){
-            return moment().diff(dob,"years");
-        } //if you need to use function like momnet -> add <script>index page</script>
+            return moment().diff(dob,"years");//if you need to use function like momnet -> add <script>index page</script>
+        }, 
+        bobButtonClick1: function(){
+            this.conterobject.conter1++;
+        },
+        bobButtonClick2: function(){
+            this.conterobject.conter2++;
+        },
+        bobButtonClick3: function(){
+            this.conterobject.conter3++;
+        },
+        bobButtonClick4: function(){
+            this.conterobject.conter4++;
+        }
+
     },
     
     
