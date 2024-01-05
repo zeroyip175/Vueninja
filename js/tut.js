@@ -29,8 +29,21 @@ var ninja = Vue.createApp ({
                 conter2: 0,
                 conter3: 0,
                 conter4: 0
-            }
-            
+            },
+            //formdata
+            message:'Type something here 1!',
+            mutiplelinemessage:'Type something here 2!',
+            checked: true,
+            checkedInterests:[],
+            selected:'',
+            mutiple_selecte_options:[
+                {text:'1', value:'one'},
+                {text:'2', value:'two'},
+                {text:'3', value:'three'}
+            ],
+            mutipleselected:[],
+            gender:''
+
         }
     },
     computed:{

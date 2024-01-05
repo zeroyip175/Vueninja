@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My Vuejs-Tut</title>
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue@3.4.5/dist/vue.global.js"></script>
     
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
@@ -12,7 +12,6 @@
             background-color: yellow;
         }
     </style>
-    
 </head>
 <body>
     <div id="gameapp">
@@ -105,8 +104,26 @@
         <br>
         <input v-on:keyup.enter="bobButtonClick4" placeholder="Press enter" >
         <p>The button above has been entered {{conterobject.conter4}} times</p>
+        <hr>
+        <!--CheckBox-->
+        <input v-model="message">
+        <p>Message is: {{message}}</p>
+        <hr>
+        <textarea v-model="mutiplelinemessage"></textarea>
+        <span>Mutipleline message is: </span>
+        <p style="white-space: pre-line;">{{mutiplelinemessage}}</p>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{checked}}</label>
+        <hr>
+        <input type="checkbox" id="checkbox" value="Programming" v-model="checkedInterests">
+        <label for="programming">Programming</label>
+        <input type="checkbox" id="checkbox" value="Networking" v-model="checkedInterests">
+        <label for="networking">Networking</label>
+        <br>
+        <p>Checked name:{{checkedInterests}}</p>
     </div>
+    <script src="js/tut.js"></script>
         
-        <script src="js/tut.js"></script>
+       
 </body>
 </html>
